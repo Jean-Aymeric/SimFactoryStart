@@ -10,6 +10,7 @@ public class Main {
         System.out.println("Machine outils : " + sfd.getMachineTools().size());
         System.out.println("Produits : " + sfd.getProducts().size());
         System.out.println("Recettes : " + sfd.getRecipes().size());
+
         int nbWorks = 0;
         for (Work work: sfd.getWorks()) {
             nbWorks += work.getRecipes().size();
