@@ -20,7 +20,7 @@ public class SimFactoryData {
         this.products.generateDataSet();
         this.recipes = new Recipes(this.actions.getDataSet(), this.products.getDataSet());
         this.recipes.generateDataSet();
-        this.works = new Works(this.recipes.getDataSet());
+        this.works = new Works(this.recipes.getDataSet(), this.machineTools.getDataSet());
         this.works.generateDataSet();
     }
 

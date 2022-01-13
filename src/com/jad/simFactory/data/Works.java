@@ -9,9 +9,11 @@ import java.util.Random;
 
 public class Works extends FactoryData<Work> {
     private final ArrayList<Recipe> recipes;
+    private final ArrayList<MachineTool> machineTools;
 
-    public Works(final ArrayList<Recipe> recipes) {
+    public Works(final ArrayList<Recipe> recipes, final ArrayList<MachineTool> machineTools) {
         this.recipes = recipes;
+        this.machineTools = machineTools;
     }
 
     private static final int NbRecipes = 10;
@@ -23,7 +25,7 @@ public class Works extends FactoryData<Work> {
     @Override
     protected void generateDataSet() {
         for (int i = 0; i < Works.NbRecipes;i++) {
-            Work work = new Work();
+            Work work = new Work(this.machineTools);
             work.addRecipe(this.getRandomRecipe());
             this.addData(work);
         }
